@@ -3,7 +3,8 @@ import './App.css'
 import PropertyCard from './components/propertyCard'
 
 function App() {
-
+  localStorage.setItem("myCat", "Tom");
+  localStorage.setItem("myAge", 76);
 
   return (
     <>

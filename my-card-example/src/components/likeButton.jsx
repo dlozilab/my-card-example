@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaHeart,FaRegHeart } from "react-icons/fa6";
 
 
 export default function LikeButton() {
-    let buttonSwitch = false;
+
+    const [buttonSwitch,setButtonSwitch] = useState(false);
+
     const toggleHeart = ()=>{
         if(buttonSwitch)
         {
-            buttonSwitch=false
+            setButtonSwitch(false)
             console.log("Liked!")
         }
         else
         {
-            buttonSwitch=true
+            setButtonSwitch(true)
             console.log("Unliked!")
         }
     }
 
   return (
-    <div onClick={toggleHeart}>{buttonSwitch?<FaHeart color={"red"} />:<FaRegHeart  color={"white"} />}</div>
+    <div onClick={toggleHeart}>{buttonSwitch?<FaHeart color={"red"} size={20}/>:<FaRegHeart  color={"white"} size={20}/>}</div>
   )
 }
